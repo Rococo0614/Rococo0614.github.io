@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Think-deeply-Play-wit-time" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/18/Think-deeply-Play-wit-time/" class="article-date">
+  <time class="dt-published" datetime="2025-05-18T03:41:19.000Z" itemprop="datePublished">2025-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/05/18/Think-deeply-Play-wit-time/">Think_deeply&amp;Play_with_time</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="深度思考，与时间赛跑"><a href="#深度思考，与时间赛跑" class="headerlink" title="深度思考，与时间赛跑"></a>深度思考，与时间赛跑</h1><p>　　这句话源自我的高中物理老师，时隔多年想起这句话仍旧大有裨益<br>前几天午休时候，突然想起高中生物书上孙儒泳院士的赠言<br>　　——————时光易逝，劝君惜取少年时。——————————<br>　　此篇博客我将会记录所有有关基础理学学习中遇到有意思的知识点<br>也许有一天会将其整理更加美观，我个人还是挺喜欢整理东西的。</p>
+<h2 id="有关数学————线性代数中的内容"><a href="#有关数学————线性代数中的内容" class="headerlink" title="有关数学————线性代数中的内容"></a>有关数学————线性代数中的内容</h2><p>　　主要内容来自《线性代数及其应用》及《线性代数应该这样学》，作为大学积累线性代数基本计算原理后的一段补充。</p>
+<h3 id="线性分解————LU分解与QR分解"><a href="#线性分解————LU分解与QR分解" class="headerlink" title="线性分解————LU分解与QR分解"></a>线性分解————LU分解与QR分解</h3><p>　　将矩阵分成两个或更多矩阵的乘积，起到简化计算的作用<br><em>LU分解</em>：A为mxn阶矩阵，可以写成形式为A&#x3D;LU，其中L是mxm下三角矩阵，可逆；主对角线元素全为1，U是mxn的阶梯型矩阵，此时方程Ax&#x3D;b变化为LUx&#x3D;b，可拆分为Ly&#x3D;b与Ux&#x3D;y。此时由于拆分方程1和2都是三角矩阵，方程易解。<br>求解方法：仅使用行倍加变化，将A变换为U，即A&#x3D;LU，同时可以证明，单位下三角矩阵的乘积和逆也是下三角矩阵，若不可能，L的元素满足用相同的一系列行变化把L变为I。<br>直观感受算法优势：计算nxn的稠密矩阵A直接计算A.^(-1)需要2n.^3次浮算，A.^(-1)与b乘需要2n.^2次浮算；LU分解大致需要(2n^3)&#x2F;3次浮算，解Ly&#x3D;b与Ux&#x3D;y大约需要n.^2次浮算。同时应注意，实际中矩阵A可能稀疏，然而A.^(-1)很可能是稠密的，此时用LU分解可能会快得多。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/18/Think-deeply-Play-wit-time/" data-id="cmc2q0yyz00015ukz9faw1jon" data-title="Think_deeply&amp;Play_with_time" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Embedded-Hardware-PCBlayout" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/17/Embedded-Hardware-PCBlayout/" class="article-date">
+  <time class="dt-published" datetime="2025-05-17T14:25:16.000Z" itemprop="datePublished">2025-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/05/17/Embedded-Hardware-PCBlayout/">Embedded-Hardware-PCBlayout</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="此文档主要记录本人在PCB硬件设计上的所有经验技术总结"><a href="#此文档主要记录本人在PCB硬件设计上的所有经验技术总结" class="headerlink" title="此文档主要记录本人在PCB硬件设计上的所有经验技术总结"></a>此文档主要记录本人在PCB硬件设计上的所有经验技术总结</h1><h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.<img src="/images/EmbeddedHardware/PCBLayout/TheFlowChartofPCBlayout.png" alt="PCB硬件Layout都包括哪些内容？"></h2><hr>
+<h2 id="2-常用Layout技巧（无顺序，想到哪写哪）"><a href="#2-常用Layout技巧（无顺序，想到哪写哪）" class="headerlink" title="2.常用Layout技巧（无顺序，想到哪写哪）"></a>2.常用Layout技巧（无顺序，想到哪写哪）</h2><h3 id="2-1-关于扇出"><a href="#2-1-关于扇出" class="headerlink" title="2.1 关于扇出"></a>2.1 关于扇出</h3><p>　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。<em>两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线</em>，以MCU为例，参考扇出如下图所示<img src="/images/EmbeddedHardware/PCBLayout/Via_Fan_Out_Sample.png">，广义上的扇孔其实是针对一个模块把内部连接完成，把外部需要的线全部打孔占位。</p>
+<h3 id="2-2-关于拉线"><a href="#2-2-关于拉线" class="headerlink" title="2.2 关于拉线"></a>2.2 关于拉线</h3><p>　　拉线为保证连线更加美观，将元件的所有引脚聚成一股拉出，减小漏连概率且提高观赏性，参考拉线如下图所示<br><img src="/images/EmbeddedHardware/PCBLayout/LaXian.png"></p>
+<h3 id="2-3-尖角铜及处理方法"><a href="#2-3-尖角铜及处理方法" class="headerlink" title="2.3 尖角铜及处理方法"></a>2.3 尖角铜及处理方法</h3><p>　　尖角铜指铺铜时由于结构原因，区域限制导致铺铜出现宽高比非常小的部分，该部分在实际电路运行时往往会导致电信号回流，对板结构产生较大影响！<a href="images/EmbeddedHardware/PCBLayout/JianJiaoTong1.png"></a>，实际设计中需要予以避免消除。<br>解决思路：能打地孔则打孔，无法打孔则设置禁止区域重新铺铜。</p>
+<h3 id="2-4-定位孔"><a href="#2-4-定位孔" class="headerlink" title="2.4 定位孔"></a>2.4 定位孔</h3><p>　　定位孔一般在附近增加１ｍｍ来设置禁止区域，防止由于定位元件（螺钉）导致的短接。</p>
+<h3 id="2-5-常用禁止铺铜走线元件"><a href="#2-5-常用禁止铺铜走线元件" class="headerlink" title="2.5 常用禁止铺铜走线元件"></a>2.5 常用禁止铺铜走线元件</h3><p>　　继电器</p>
+<p>　　小封装电阻电容内部禁止穿线</p>
+<p>　　电感：电感器件下方尽量避免走线，同时所在层需要挖空铜皮处理，如果电感附近有走线，需要对信号线包地处理。</p>
+<p>　　晶振：为时钟提供基准信号，决定电路的稳定性，布线时严禁在晶振中横穿其他信号线，同时尽量避免在晶振下方或附近布置高速信号线或电源线。同时应使用差分走线方式，并在晶振周围进行包地线处理（法拉第笼增强抗干扰）。</p>
+<h3 id="2-6-关于过孔"><a href="#2-6-关于过孔" class="headerlink" title="2.6 关于过孔"></a>2.6 关于过孔</h3><p>如果空间足够，尽量避免过孔直接打到焊盘上(美观加上可能会有焊料损失，焊接不牢固)</p>
+<hr>
+<h2 id="3-电源模块设计"><a href="#3-电源模块设计" class="headerlink" title="3.电源模块设计"></a>3.电源模块设计</h2><p>一般常用PCB常用电源模块有LDO，开关电源和PMU电源，因此主要针对这三种模块进行设计规范。</p>
+<h3 id="3-1-LDO模块设计规范"><a href="#3-1-LDO模块设计规范" class="headerlink" title="3.1 LDO模块设计规范"></a>3.1 LDO模块设计规范</h3><ol>
+<li><p>以LDO核心元器件布局。</p>
+</li>
+<li><p>滤波电容按照先大后小原则，尽量靠近芯片引脚摆放。</p>
+</li>
+<li><p>电源输入输出端尽量远离，避免噪声耦合。</p>
+</li>
+<li><p>主干道处理，以铺铜代替布线。</p>
+</li>
+</ol>
+<h3 id="3-2-开关电源模块设计规范"><a href="#3-2-开关电源模块设计规范" class="headerlink" title="3.2 开关电源模块设计规范"></a>3.2 开关电源模块设计规范</h3><ol>
+<li><p>如果有Datasheet，以其推荐原理图设计布局，注意回流路径越短越好。</p>
+</li>
+<li><p>与LDO滤波电容摆放需求相同</p>
+</li>
+<li><p>使相邻电感垂直放置，大电感和大电容尽量布置在主器件面。</p>
+</li>
+<li><p>尽量保持单点接地，于主器件下方回流至地，避免开关噪声沿地平面传播。</p>
+</li>
+<li><p>开关电源模块内部信号互联线尽量短而粗，原理干扰源。</p>
+</li>
+<li><p>中间散热焊盘建议双面开窗</p>
+</li>
+</ol>
+<h3 id="3-3-PMU模块设计规范"><a href="#3-3-PMU模块设计规范" class="headerlink" title="3.3 PMU模块设计规范"></a>3.3 PMU模块设计规范</h3><ol>
+<li><p>以PMU为中心，先考虑DC-DC(参考3.2)，再考虑LDO布局(参考3.1)。</p>
+</li>
+<li><p>BUCK部分需要输入输出电容就近可靠接地，接地点靠近，做到回路尽可能短。</p>
+</li>
+<li><p>PMU的I2C走线尽量避免同层或者隔层的干扰</p>
+</li>
+</ol>
+<h3 id="3-4-电源完整性分析"><a href="#3-4-电源完整性分析" class="headerlink" title="3.4 电源完整性分析"></a>3.4 电源完整性分析</h3><ol>
+<li><p>元件面、焊接面为完整的地平面。</p>
+</li>
+<li><p>关键信号与地层相邻，不跨分割，如不可避免，要适当加跨接电容<br>形成信号回流通道。</p>
+</li>
+<li><p>优先电源平面和地平面紧耦合。</p>
+</li>
+<li><p>关键电源有一对应地平面相邻。</p>
+</li>
+<li><p>对于PCB上小范围内用到的电源如某个IC芯片的核心工作电压，尽<br>量在信号层上灌铜解决。</p>
+</li>
+<li><p>平面的分割宽度20~30mil。对于模拟电源和数字电源的分割宽度需<br>适当加大，以防止数字电源对模拟电源的噪声干扰；压差大的电源<br>也需要增加。</p>
+</li>
+<li><p>电源平面分割要尽量保持规则，不允许有细长条及哑铃形分割；注意电<br>源瓶颈的出现。</p>
+</li>
+<li><p>相邻层不同的电源平面要避免交叠放置，以防止噪声的互扰。</p>
+</li>
+<li><p>模拟电源和模拟地；数字电源和数字地，在平面层分割时要严格分开，<br>不要在平面上存在容性耦合。</p>
+</li>
+<li><p>电源的分割区域要正确，模拟电源区域上要避免有数字信号和数字器件，<br>数字电源区域上要避免有模拟信号和模拟器件，以防止噪声的互扰。</p>
+</li>
+<li><p>电源层要比地层内缩1mm，并在内缩区域每隔150mil打屏蔽地过孔。</p>
+</li>
+</ol>
+<hr>
+<h2 id="4-USB接口设计规范"><a href="#4-USB接口设计规范" class="headerlink" title="4.USB接口设计规范"></a>4.USB接口设计规范</h2><h3 id="4-1USB布局要点"><a href="#4-1USB布局要点" class="headerlink" title="4.1USB布局要点"></a>4.1USB布局要点</h3><ol>
+<li><p>接口靠近板边放置，方便拔插；</p>
+</li>
+<li><p>ESD器件靠近接口放置，走线需先经过ESD器件(ESD器件是防浪涌 与稳压管不同 原理图看着很像 注意区分)</p>
+</li>
+<li><p>在元件布局时，使差分线路最短，以缩短差分线走线距离。</p>
+</li>
+<li><p>EMI滤波器或共模电感需靠近USB插座放置，防止电磁辐射；</p>
+</li>
+<li><p>USB2.0接口需注意2.2ohm电阻， USB3.0接口TX N&#x2F;P需要注意AC耦合电容布局，都需要靠近接口摆放；</p>
+</li>
+<li><p>阻抗要求控制：USB差分阻抗Zdiff为90Ω(常规差分阻抗一般为100Ohm、差分地过孔回流)；</p>
+</li>
+<li><p>USB差分需要进行打孔包地，差分换层处需要打屏蔽地过孔。</p>
+</li>
+<li><p>差分需要进行对内等长，误差为±5mil；</p>
+</li>
+<li><p>如若在设计中有使用保护地，保护地的线宽&gt;&#x3D;100mil保护地和信号地之间的间距&gt;&#x3D;40mil；</p>
+</li>
+<li><p>USB3.0以上所有信号都需要进行对间等长(对间指不同的差分信号间)；</p>
+</li>
+<li><p>USB3.0 SSTX N&#x2F;P,RX N&#x2F;P,换孔尽量不要超过2个，信号完整的参考平面，信号不能进行跨分割(跨分割：从另一个层面相对不同的完整参考平面跨过去了 会导致信号没办法做信号阻抗<br>事实上无法做所有信号线跨分割 所以只需要针对所有的等长信号不要跨分割即可)；</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/" data-id="cmc2q0yyx00005ukz03koeoz2" data-title="Embedded-Hardware-PCBlayout" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Embedded-Harware/" rel="tag">Embedded Harware</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PCBlayout/" rel="tag">PCBlayout</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my-first-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/17/my-first-blog/" class="article-date">
+  <time class="dt-published" datetime="2025-05-17T12:56:27.000Z" itemprop="datePublished">2025-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/05/17/my-first-blog/">my_first_blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="这是我的自我介绍及目标的博客！"><a href="#这是我的自我介绍及目标的博客！" class="headerlink" title="这是我的自我介绍及目标的博客！"></a>这是我的自我介绍及目标的博客！</h1><h2 id="从今天（2025-5-17）开始，我会在个人博客上更新有关自己的技术栈堆叠历程以及部分人生路上的成长心得体会。"><a href="#从今天（2025-5-17）开始，我会在个人博客上更新有关自己的技术栈堆叠历程以及部分人生路上的成长心得体会。" class="headerlink" title="从今天（2025.5.17）开始，我会在个人博客上更新有关自己的技术栈堆叠历程以及部分人生路上的成长心得体会。"></a>从今天（2025.5.17）开始，我会在个人博客上更新有关自己的技术栈堆叠历程以及部分人生路上的成长心得体会。</h2><pre><code>个人简单介绍：
+    动物界-&gt;脊索动物们-&gt;哺乳纲-&gt;杂食目-&gt;人科-&gt;人属-&gt;智人
+    希望能通过自己的努力，在人生短暂的几十年中
+    不断追寻自己想要的东西。通过站在巨人肩膀上眺望得到的见识做出大众真正需要的电子产品。
+    时间轴：2002.5.24 来到这个世界
+               2020-2024 哈尔滨工业大学 精密仪器 本科
+               2025- 清华大学 仪器仪表工程 硕士
+    个人爱好：技术，运动，美食，乐器，FPS游戏狂热爱好者 
+</code></pre>
+<hr>
+<h3 id="2025年目标"><a href="#2025年目标" class="headerlink" title="2025年目标:"></a>2025年目标:</h3><p>现在来看，终于没有了升学的烦恼，可以把自己的身心完全投入进技术之中了。<br>[]1.使用c与c++，把codeforces的和洛谷的题全部刷一遍。<br>[]2.看完《匠人手记》 并尝试做出一个让自己满意的机器人。<br>[]3.六级考六百分以上(只能等下半年了，但是听力要早点练)。<br>[]4.今年到明年3月，积攒相关技术栈，明年暑假实习一定要去其中一家，(大疆、OPPO、影石、德州仪器):按照相机工程师的标准，<br>    对嵌入式软硬件的学习需全面发展，循序渐进。<br>[]5.通关深圳IO<br>[]6.看完《工程控制论》 《自动控制原理》并以此来加深matlab的使用(看了很多家企业，对于控制的学习还是需要进一步加深的）。<br>[]7.通过《机械设计》来加深对solidworks的使用。<br>[完成]8.有一定的资产积累<br>[]9.坚持运动	<br>[完成]10.成为清华大学的研究生<br>[]11.健康生活（此处应该主要指的是早睡早起和健康饮食)<br>[]12.学会吉他所有的弦<br>[]13.加深对PCBLayout的印象<br>[]14.阅读至少十五本专业书籍。<br>[完成]15.趁着自己还有时间，出去旅游。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/17/my-first-blog/" data-id="cmc2q0yz100035ukz2y3lchi7" data-title="my_first_blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Embedded-Harware/" rel="tag">Embedded Harware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCBlayout/" rel="tag">PCBlayout</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Embedded-Harware/" style="font-size: 10px;">Embedded Harware</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/PCBlayout/" style="font-size: 10px;">PCBlayout</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/18/Think-deeply-Play-wit-time/">Think_deeply&amp;Play_with_time</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/17/Embedded-Hardware-PCBlayout/">Embedded-Hardware-PCBlayout</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/17/my-first-blog/">my_first_blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
