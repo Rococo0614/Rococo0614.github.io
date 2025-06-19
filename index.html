@@ -100,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/18/Think-deeply-Play-wit-time/" data-id="cmc2q9v980001d8kz606vg739" data-title="Think_deeply&amp;Play_with_time" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/18/Think-deeply-Play-wit-time/" data-id="cmc3d9vwl0001mxkz1ns33r8v" data-title="Think_deeply&amp;Play_with_time" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -144,10 +144,12 @@
 <h3 id="2-5-常用禁止铺铜走线元件"><a href="#2-5-常用禁止铺铜走线元件" class="headerlink" title="2.5 常用禁止铺铜走线元件"></a>2.5 常用禁止铺铜走线元件</h3><p>　　继电器</p>
 <p>　　小封装电阻电容内部禁止穿线</p>
 <p>　　电感：电感器件下方尽量避免走线，同时所在层需要挖空铜皮处理，如果电感附近有走线，需要对信号线包地处理。</p>
-<p>　　晶振：为时钟提供基准信号，决定电路的稳定性，布线时严禁在晶振中横穿其他信号线，同时尽量避免在晶振下方或附近布置高速信号线或电源线。同时应使用差分走线方式，并在晶振周围进行包地线处理（法拉第笼增强抗干扰）。</p>
+<p>　　晶振：为时钟提供基准信号，决定电路的稳定性，布线时严禁在晶振中横穿其他信号线，同时尽量避免在晶振下方或附近布置高速信号线或电源线。同时应使用差分走线方式，并在晶振周围进行包地线处理（法拉第笼增强抗干扰），并且在晶振背面进行完整地平面铺设。</p>
+<p>   蓝牙模块：蓝牙模块在 PCB 设计时，在 PCB 布局布线空间充足的情况下建议设计模块内区域保持禁空，不进行信号布线且不进行布局其它器件在模块区域内部。</p>
 <h3 id="2-6-关于过孔"><a href="#2-6-关于过孔" class="headerlink" title="2.6 关于过孔"></a>2.6 关于过孔</h3><p>如果空间足够，尽量避免过孔直接打到焊盘上(美观加上可能会有焊料损失，焊接不牢固)</p>
-<hr>
-<h2 id="3-电源模块设计"><a href="#3-电源模块设计" class="headerlink" title="3.电源模块设计"></a>3.电源模块设计</h2><p>一般常用PCB常用电源模块有LDO，开关电源和PMU电源，因此主要针对这三种模块进行设计规范。</p>
+<p>过孔，仅仅只是在顶层连接，且内层底层之间没有进行任何连接，即为天线过孔，天线过孔同样是会形成天线效应，会接受其他的信号干扰源。</p>
+<h3 id="2-7-关于线路加宽处理"><a href="#2-7-关于线路加宽处理" class="headerlink" title="2.7 关于线路加宽处理"></a>2.7 关于线路加宽处理</h3><p>电机电路驱动线要进行加宽处理，保证电机驱动功能正常。</p>
+<h2 id="喇叭功放，正负极线需要进行加宽处理，确保音频电路功能正常。"><a href="#喇叭功放，正负极线需要进行加宽处理，确保音频电路功能正常。" class="headerlink" title="喇叭功放，正负极线需要进行加宽处理，确保音频电路功能正常。"></a>喇叭功放，正负极线需要进行加宽处理，确保音频电路功能正常。</h2><h2 id="3-电源模块设计"><a href="#3-电源模块设计" class="headerlink" title="3.电源模块设计"></a>3.电源模块设计</h2><p>一般常用PCB常用电源模块有LDO，开关电源和PMU电源，因此主要针对这三种模块进行设计规范。</p>
 <h3 id="3-1-LDO模块设计规范"><a href="#3-1-LDO模块设计规范" class="headerlink" title="3.1 LDO模块设计规范"></a>3.1 LDO模块设计规范</h3><ol>
 <li><p>以LDO核心元器件布局。</p>
 </li>
@@ -204,6 +206,7 @@
 <li><p>电源层要比地层内缩1mm，并在内缩区域每隔150mil打屏蔽地过孔。</p>
 </li>
 </ol>
+<h3 id="3-5-通用电源布局思路"><a href="#3-5-通用电源布局思路" class="headerlink" title="3.5 通用电源布局思路"></a>3.5 通用电源布局思路</h3><p>输入端电源建议大面积两面同时铺铜处理</p>
 <hr>
 <h2 id="4-USB接口设计规范"><a href="#4-USB接口设计规范" class="headerlink" title="4.USB接口设计规范"></a>4.USB接口设计规范</h2><h3 id="4-1USB布局要点"><a href="#4-1USB布局要点" class="headerlink" title="4.1USB布局要点"></a>4.1USB布局要点</h3><ol>
 <li><p>接口靠近板边放置，方便拔插；</p>
@@ -229,11 +232,31 @@
 <li><p>USB3.0 SSTX N&#x2F;P,RX N&#x2F;P,换孔尽量不要超过2个，信号完整的参考平面，信号不能进行跨分割(跨分割：从另一个层面相对不同的完整参考平面跨过去了 会导致信号没办法做信号阻抗<br>事实上无法做所有信号线跨分割 所以只需要针对所有的等长信号不要跨分割即可)；</p>
 </li>
 </ol>
+<hr>
+<h2 id="5-存储器模块PCB设计"><a href="#5-存储器模块PCB设计" class="headerlink" title="5.存储器模块PCB设计"></a>5.存储器模块PCB设计</h2><h3 id="5-1-SDRAM布局布线要点"><a href="#5-1-SDRAM布局布线要点" class="headerlink" title="5.1 SDRAM布局布线要点"></a>5.1 SDRAM布局布线要点</h3><ol>
+<li>位置要求<br>靠近CPU或BGA放置<br>2片时，相对于CPU严格对称<br>空间足够时，与CPU放在同一面，空间不足时SDRAM顶底对贴<br>SDRAM到CPU推荐的中心距离：<br>中间无排阻时，900-1000mil<br>中间有排阻时，1000-1300mil</li>
+<li>端源匹配电阻应靠近输出管脚放置</li>
+<li>拓扑结构： SDRAM的数据、地址线推荐采用菊花链布线和远端分支方式布线</li>
+<li>始终处理： 对于时钟信号采用RCR滤波，包地或至少保证3W间距</li>
+<li>电源处理： 首先也好保证SDRAM器件所有管脚靠近放置退耦电容</li>
+<li>阻抗控制： 所有信号线控制50ohm</li>
+<li>网络分组： 1.数据线每9根要求同组同层<br>2.地址线、时钟线、控制线分一组<br>3.所有电源和地分一组</li>
+<li>所有信号线的间距满足3W原则</li>
+<li>空间允许下，应该在数据线，地址线，时钟线之间加地线进行隔离，并放置地过孔</li>
+<li>分组等长，误差100mil以内。</li>
+</ol>
+<h3 id="5-2-FLASH模块设计"><a href="#5-2-FLASH模块设计" class="headerlink" title="5.2 FLASH模块设计"></a>5.2 FLASH模块设计</h3><ol>
+<li>靠近主控摆放</li>
+<li>管脚滤波就近放置</li>
+<li>串接电阻靠近主控摆放，串阻和主控布线长度≤300mil</li>
+<li>Flash和SDRAM公用信号时，布局采用菊花链</li>
+<li>时钟包地处理</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/" data-id="cmc2q9v960000d8kz1ttl9qi9" data-title="Embedded-Hardware-PCBlayout" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/" data-id="cmc3d9vwi0000mxkzcub001c1" data-title="Embedded-Hardware-PCBlayout" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -284,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/17/my-first-blog/" data-id="cmc2q9v990003d8kzeob4d5r3" data-title="my_first_blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/17/my-first-blog/" data-id="cmc3d9vwn0003mxkz0k7e6vnl" data-title="my_first_blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
