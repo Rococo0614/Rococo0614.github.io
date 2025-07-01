@@ -6,18 +6,19 @@
   
   <title>Embedded-Hardware-PCBlayout | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="此文档主要记录本人在PCB硬件设计上的所有经验技术总结1. 2.常用Layout技巧（无顺序，想到哪写哪）2.1 关于扇出　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线，以MCU为例，参考扇出如下图所示，广义上的扇孔其实是针对一个模块把内部连接完成，把外部需要的线全部打孔占位。 2.2 关于拉线　　拉线为保证连线更">
+  <meta name="description" content="此文档主要记录本人在PCB硬件设计上的所有经验技术总结1. &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 2.常用布线技巧（无顺序，想到哪写哪）2.1 关于扇出　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线，以MCU为例，参考扇出如下图所示2.常用Layout技巧（无顺序，想到哪写哪）2.1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Embedded-Hardware-PCBlayout">
 <meta property="og:url" content="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="此文档主要记录本人在PCB硬件设计上的所有经验技术总结1. 2.常用Layout技巧（无顺序，想到哪写哪）2.1 关于扇出　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线，以MCU为例，参考扇出如下图所示，广义上的扇孔其实是针对一个模块把内部连接完成，把外部需要的线全部打孔占位。 2.2 关于拉线　　拉线为保证连线更">
+<meta property="og:description" content="此文档主要记录本人在PCB硬件设计上的所有经验技术总结1. &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 2.常用布线技巧（无顺序，想到哪写哪）2.1 关于扇出　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线，以MCU为例，参考扇出如下图所示2.常用Layout技巧（无顺序，想到哪写哪）2.1">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/EmbeddedHardware/PCBLayout/TheFlowChartofPCBlayout.png">
 <meta property="og:image" content="http://example.com/images/EmbeddedHardware/PCBLayout/Via_Fan_Out_Sample.png">
+<meta property="og:image" content="http://example.com/images/EmbeddedHardware/PCBLayout/Via_Fan_Out_Sample.png">
 <meta property="og:image" content="http://example.com/images/EmbeddedHardware/PCBLayout/LaXian.png">
 <meta property="article:published_time" content="2025-05-17T14:25:16.000Z">
-<meta property="article:modified_time" content="2025-06-19T12:37:34.228Z">
+<meta property="article:modified_time" content="2025-06-19T12:49:20.733Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Embedded Harware">
 <meta property="article:tag" content="PCBlayout">
@@ -102,11 +103,42 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="此文档主要记录本人在PCB硬件设计上的所有经验技术总结"><a href="#此文档主要记录本人在PCB硬件设计上的所有经验技术总结" class="headerlink" title="此文档主要记录本人在PCB硬件设计上的所有经验技术总结"></a>此文档主要记录本人在PCB硬件设计上的所有经验技术总结</h1><h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.<img src="/images/EmbeddedHardware/PCBLayout/TheFlowChartofPCBlayout.png" alt="PCB硬件Layout都包括哪些内容？"></h2><hr>
-<h2 id="2-常用Layout技巧（无顺序，想到哪写哪）"><a href="#2-常用Layout技巧（无顺序，想到哪写哪）" class="headerlink" title="2.常用Layout技巧（无顺序，想到哪写哪）"></a>2.常用Layout技巧（无顺序，想到哪写哪）</h2><h3 id="2-1-关于扇出"><a href="#2-1-关于扇出" class="headerlink" title="2.1 关于扇出"></a>2.1 关于扇出</h3><p>　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。<em>两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线</em>，以MCU为例，参考扇出如下图所示<img src="/images/EmbeddedHardware/PCBLayout/Via_Fan_Out_Sample.png">，广义上的扇孔其实是针对一个模块把内部连接完成，把外部需要的线全部打孔占位。</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h2 id="2-常用布线技巧（无顺序，想到哪写哪）"><a href="#2-常用布线技巧（无顺序，想到哪写哪）" class="headerlink" title="2.常用布线技巧（无顺序，想到哪写哪）"></a>2.常用布线技巧（无顺序，想到哪写哪）</h2><h3 id="2-1-关于扇出"><a href="#2-1-关于扇出" class="headerlink" title="2.1 关于扇出"></a>2.1 关于扇出</h3><h1 id="扇出是为解决Layout中针对多引脚封装的布线繁杂问题。两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线，以MCU为例，参考扇出如下图所示"><a href="#扇出是为解决Layout中针对多引脚封装的布线繁杂问题。两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线，以MCU为例，参考扇出如下图所示" class="headerlink" title="　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线，以MCU为例，参考扇出如下图所示"></a>　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。<em>两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条<br>横线</em>，以MCU为例，参考扇出如下图所示<img src="/images/EmbeddedHardware/PCBLayout/Via_Fan_Out_Sample.png"></h1><h2 id="2-常用Layout技巧（无顺序，想到哪写哪）"><a href="#2-常用Layout技巧（无顺序，想到哪写哪）" class="headerlink" title="2.常用Layout技巧（无顺序，想到哪写哪）"></a>2.常用Layout技巧（无顺序，想到哪写哪）</h2><h3 id="2-1-关于扇出-1"><a href="#2-1-关于扇出-1" class="headerlink" title="2.1 关于扇出"></a>2.1 关于扇出</h3><p>　　扇出是为解决Layout中针对多引脚封装的布线繁杂问题。<em>两层板设计一般一面横线，一面竖线，起码保证两扇出过孔间有能加入一条横线</em>，以MCU为例，参考扇出如下图所示<img src="/images/EmbeddedHardware/PCBLayout/Via_Fan_Out_Sample.png">，广义上的扇孔其实是针对一个模块把内部连接完成，把外部需要的线全部打孔占位。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9e8ffe6 (更新)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h3 id="2-2-关于拉线"><a href="#2-2-关于拉线" class="headerlink" title="2.2 关于拉线"></a>2.2 关于拉线</h3><p>　　拉线为保证连线更加美观，将元件的所有引脚聚成一股拉出，减小漏连概率且提高观赏性，参考拉线如下图所示<br><img src="/images/EmbeddedHardware/PCBLayout/LaXian.png"></p>
-<h3 id="2-3-尖角铜及处理方法"><a href="#2-3-尖角铜及处理方法" class="headerlink" title="2.3 尖角铜及处理方法"></a>2.3 尖角铜及处理方法</h3><p>　　尖角铜指铺铜时由于结构原因，区域限制导致铺铜出现宽高比非常小的部分，该部分在实际电路运行时往往会导致电信号回流，对板结构产生较大影响！<a href="images/EmbeddedHardware/PCBLayout/JianJiaoTong1.png"></a>，实际设计中需要予以避免消除。<br>解决思路：能打地孔则打孔，无法打孔则设置禁止区域重新铺铜。</p>
-<h3 id="2-4-定位孔"><a href="#2-4-定位孔" class="headerlink" title="2.4 定位孔"></a>2.4 定位孔</h3><p>　　定位孔一般在附近增加１ｍｍ来设置禁止区域，防止由于定位元件（螺钉）导致的短接。</p>
-<h3 id="2-5-常用禁止铺铜走线元件"><a href="#2-5-常用禁止铺铜走线元件" class="headerlink" title="2.5 常用禁止铺铜走线元件"></a>2.5 常用禁止铺铜走线元件</h3><p>　　继电器</p>
+<h3 id="2-3-尖角铜及处理方法"><a href="#2-3-尖角铜及处理方法" class="headerlink" title="2.3 尖角铜及处理方法"></a>2.3 尖角铜及处理方法</h3><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>　　尖角铜指铺铜时由于结构原因，区域限制导致铺铜出现宽高比非常小的部分，该部分在实际电路运行时往往会导致电信号回流，对板结<br>构产生较大影响！<a href="images/EmbeddedHardware/PCBLayout/JianJiaoTong1.png"></a>，实际设计中需要予以避免消除。<br>解决思路：能打地孔则打孔，无法打孔则设置禁止区域重新铺铜。</p>
+<h3 id="2-4-定位孔"><a href="#2-4-定位孔" class="headerlink" title="2.4 定位孔"></a>2.4 定位孔</h3><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>　　尖角铜指铺铜时由于结构原因，区域限制导致铺铜出现宽高比非常小的部分，该部分在实际电路运行时往往会导致电信号回流，对板结构产生较大影响！<a href="images/EmbeddedHardware/PCBLayout/JianJiaoTong1.png"></a>，实际设计中需要予以避免消除。<br>解决思路：能打地孔则打孔，无法打孔则设置禁止区域重新铺铜。</p>
+<h3 id="2-4-定位孔-1"><a href="#2-4-定位孔-1" class="headerlink" title="2.4 定位孔"></a>2.4 定位孔</h3><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9e8ffe6 (更新)<br>　　定位孔一般在附近增加１ｍｍ来设置禁止区域，防止由于定位元件（螺钉）导致的短接。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="2-5-常用禁止铺铜走线元件"><a href="#2-5-常用禁止铺铜走线元件" class="headerlink" title="2.5 常用禁止铺铜走线元件"></a>2.5 常用禁止铺铜走线元件</h3><h1 id="HEAD"><a href="#HEAD" class="headerlink" title="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD　　继电器、晶振(干扰严重)"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>　　继电器、晶振(干扰严重)</h1><p>　　继电器</p>
 <p>　　小封装电阻电容内部禁止穿线</p>
 <p>　　电感：电感器件下方尽量避免走线，同时所在层需要挖空铜皮处理，如果电感附近有走线，需要对信号线包地处理。</p>
 <p>　　晶振：为时钟提供基准信号，决定电路的稳定性，布线时严禁在晶振中横穿其他信号线，同时尽量避免在晶振下方或附近布置高速信号线或电源线。同时应使用差分走线方式，并在晶振周围进行包地线处理（法拉第笼增强抗干扰），并且在晶振背面进行完整地平面铺设。</p>
@@ -215,13 +247,28 @@
 <li>管脚滤波就近放置</li>
 <li>串接电阻靠近主控摆放，串阻和主控布线长度≤300mil</li>
 <li>Flash和SDRAM公用信号时，布局采用菊花链</li>
-<li>时钟包地处理</li>
+<li>时钟包地处理<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9e8ffe6 (更新)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/" data-id="cmc3d9vwi0000mxkzcub001c1" data-title="Embedded-Hardware-PCBlayout" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/" data-id="cmcjziuu10000xmkz2vwm5xe9" data-title="Embedded-Hardware-PCBlayout" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -265,7 +312,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Embedded-Harware/" rel="tag">Embedded Harware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCBlayout/" rel="tag">PCBlayout</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Embedded-Harware/" rel="tag">Embedded Harware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Embedded-Software/" rel="tag">Embedded Software</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PCBlayout/" rel="tag">PCBlayout</a></li></ul>
     </div>
   </div>
 
@@ -275,7 +322,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Embedded-Harware/" style="font-size: 10px;">Embedded Harware</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/PCBlayout/" style="font-size: 10px;">PCBlayout</a>
+      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Embedded-Harware/" style="font-size: 10px;">Embedded Harware</a> <a href="/tags/Embedded-Software/" style="font-size: 10px;">Embedded Software</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/PCBlayout/" style="font-size: 10px;">PCBlayout</a>
     </div>
   </div>
 
@@ -284,7 +331,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">June 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
     </div>
   </div>
 
@@ -295,6 +342,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/06/29/Embedded-Software/">Embedded_Software</a>
+          </li>
         
           <li>
             <a href="/2025/05/18/Think-deeply-Play-wit-time/">Think_deeply&amp;Play_with_time</a>
