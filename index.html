@@ -93,35 +93,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="how-to-get-the-variable-length-string-in-C"><a href="#how-to-get-the-variable-length-string-in-C" class="headerlink" title="how to get the variable length string in C?"></a>how to get the variable length string in C?</h3><h2 id="here-is-one-of-the-solution"><a href="#here-is-one-of-the-solution" class="headerlink" title="here is one of the solution"></a>here is one of the solution</h2><p>#include &lt;stdlib.h&gt;</p>
-<p>char *get_string(){<br>    int length &#x3D; 0, capacity &#x3D; 0;<br>    int ch;<br>    char *str &#x3D; NULL;</p>
-<pre><code>while((ch = getchar()) != &#39;\n&#39; &amp;&amp; ch != EOF)&#123;
-    if(length+1 &gt; capacity)&#123;
-        capacity = (capacity == 0) ? 16 : capacity * 2;
-        char *temp = realloc(str, capacity);
-        if(temp == NULL)&#123;
-            free(str);
-            return NULL;
-        &#125;
-        str = temp;
-    &#125;
-    str[length++] = (char) ch;
-&#125;
-if(str != NULL)&#123;
-    str[length] = &#39;\0&#39;;
-&#125;
-else&#123;
-    str = calloc(1,sizeof(char));
-    if(str == NULL) return NULL;
-&#125;
-return str;
-</code></pre>
-<p>}</p>
-
+        <h3 id="how-to-get-the-variable-length-string-in-C"><a href="#how-to-get-the-variable-length-string-in-C" class="headerlink" title="how to get the variable length string in C?"></a>how to get the variable length string in C?</h3><p>here is one of the solution</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">char *get_string()&#123;</span><br><span class="line">    int length = 0, capacity = 0;</span><br><span class="line">    int ch;</span><br><span class="line">    char *str = NULL;</span><br><span class="line">    </span><br><span class="line">    while((ch = getchar()) != &#x27;\n&#x27; &amp;&amp; ch != EOF)&#123;</span><br><span class="line">        if(length+1 &gt; capacity)&#123;</span><br><span class="line">            capacity = (capacity == 0) ? 16 : capacity * 2;</span><br><span class="line">            char *temp = realloc(str, capacity);</span><br><span class="line">            if(temp == NULL)&#123;</span><br><span class="line">                free(str);</span><br><span class="line">                return NULL;</span><br><span class="line">            &#125;</span><br><span class="line">            str = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        str[length++] = (char) ch;</span><br><span class="line">    &#125;</span><br><span class="line">    if(str != NULL)&#123;</span><br><span class="line">        str[length] = &#x27;\0&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        str = calloc(1,sizeof(char));</span><br><span class="line">        if(str == NULL) return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    return str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/09/06/09-06-2025/" data-id="cmf7kvdb500046ekzgrnranou" data-title="09-06-2025" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/09/06/09-06-2025/" data-id="cmf7kys6000041bkzbcawayeb" data-title="09-06-2025" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -175,21 +152,11 @@ return str;
 <h4 id="C代码"><a href="#C代码" class="headerlink" title="C代码"></a>C代码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 初始化</span><br><span class="line">    for (int i = 2; i &lt;= n; i++) isPrime[i] = true;</span><br><span class="line"></span><br><span class="line">    // 埃氏筛</span><br><span class="line">    for (int i = 2; i * i &lt;= n; i++) &#123;</span><br><span class="line">        if (isPrime[i]) &#123;</span><br><span class="line">            for (int j = i * i; j &lt;= n; j += i) &#123;</span><br><span class="line">                isPrime[j] = false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="从小到大，遇到质数就划掉他的倍数"><a href="#从小到大，遇到质数就划掉他的倍数" class="headerlink" title="从小到大，遇到质数就划掉他的倍数"></a>从小到大，遇到质数就划掉他的倍数</h3><h3 id="we-gt-introduce-the-vise-of-eula"><a href="#we-gt-introduce-the-vise-of-eula" class="headerlink" title="we gt introduce the vise of eula"></a>we gt introduce the vise of eula</h3><p>compared with vise of esteranis, this vise would’t get any re-count if its not prime, let start</p>
-<p>…<br>C form</p>
-<p>#include &lt;stdbool.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>void vise_of_eula(int num){<br>    if(num &lt; 2){<br>        obviously, no prime<br>    }<br>    bool <em>is_composite &#x3D; (bool</em>) calloc(num+1, sizeof(bool));<br>    int <em>Primes &#x3D; (int</em>) malloc((num+1) * sizeof(int)),cnt &#x3D; 0;<br>    for(int i &#x3D; 2; i &lt;&#x3D; num; i++){<br>        if(!is_composite){<br>            Primes[cnt++] &#x3D; i;<br>        }<br>        for(int j &#x3D; 0; j &lt; cn &amp;&amp; i * Primes[j] &lt;&#x3D; num; j++){<br>            is_composite[i * Primse[j]] &#x3D; true;<br>            if(i % Primse[j] &#x3D;&#x3D; 0) break;<br>        }</p>
-<pre><code>&#125; 
-free(is_composite);
-int *final_Prime = realloc(Primes, cnt*sizeof(int));
-free(Primes); 
-</code></pre>
-<p>}</p>
-<hr>
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">C form</span><br><span class="line"></span><br><span class="line">#include &lt;stdbool.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">void vise_of_eula(int num)&#123;</span><br><span class="line">    if(num &lt; 2)&#123;</span><br><span class="line">        obviously, no prime</span><br><span class="line">    &#125;</span><br><span class="line">    bool *is_composite = (bool*) calloc(num+1, sizeof(bool));</span><br><span class="line">    int *Primes = (int*) malloc((num+1) * sizeof(int)),cnt = 0;</span><br><span class="line">    for(int i = 2; i &lt;= num; i++)&#123;</span><br><span class="line">        if(!is_composite)&#123;</span><br><span class="line">            Primes[cnt++] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int j = 0; j &lt; cn &amp;&amp; i * Primes[j] &lt;= num; j++)&#123;</span><br><span class="line">            is_composite[i * Primse[j]] = true;</span><br><span class="line">            if(i % Primse[j] == 0) break;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; </span><br><span class="line">    free(is_composite);</span><br><span class="line">    int *final_Prime = realloc(Primes, cnt*sizeof(int));</span><br><span class="line">    free(Primes); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/07/22/07-22-2025/" data-id="cmf7kvdb300026ekzblkv8oly" data-title="07-22-2025" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/07/22/07-22-2025/" data-id="cmf7kys5z00021bkz6frifhxo" data-title="07-22-2025" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -243,7 +210,7 @@ free(Primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/07/15/07-15-2025/" data-id="cmf7kvdb200016ekz4e9162xd" data-title="07/15/2025" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/07/15/07-15-2025/" data-id="cmf7kys5y00011bkz9zzf27rr" data-title="07/15/2025" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -343,7 +310,7 @@ free(Primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/06/29/Embedded-Software/" data-id="cmf7kvdb500066ekz7l789v3c" data-title="Embedded_Software" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/06/29/Embedded-Software/" data-id="cmf7kys6100061bkz87ywcs86" data-title="Embedded_Software" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -384,7 +351,7 @@ free(Primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/18/Think-deeply-Play-wit-time/" data-id="cmf7kvdb600086ekzfb2s3ygj" data-title="Think_deeply&amp;Play_with_time" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/18/Think-deeply-Play-wit-time/" data-id="cmf7kys6200081bkz5t9lct50" data-title="Think_deeply&amp;Play_with_time" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -570,7 +537,7 @@ free(Primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/" data-id="cmf7kvdb500056ekzf56z8qyt" data-title="Embedded-Hardware-PCBlayout" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/17/Embedded-Hardware-PCBlayout/" data-id="cmf7kys6100051bkz0o752ec4" data-title="Embedded-Hardware-PCBlayout" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -621,7 +588,7 @@ free(Primes);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/17/my-first-blog/" data-id="cmf7kvdb600096ekzcih2c7ku" data-title="my_first_blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/17/my-first-blog/" data-id="cmf7kys6200091bkz8toifzg1" data-title="my_first_blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
